@@ -261,7 +261,7 @@
 /* First Slide */
 .demo-1 .bg-1 .sl-slide-inner,
 .demo-1 .bg-1 .sl-content-slice {
-	background-image: url("img/slider1.jpg")
+	background-image: url("images/slider1.jpg")
 }
 
 /* Second Slide */
@@ -567,29 +567,4 @@
 		font-size: 16px;
 	}
 
-}
-
-
-.logo{
-	z-index: 2000;
-	position: relative;
-	/*margin: 25px;*/
-	width: 100%;
-	margin: auto;
-}
-
-.green-bar{
-	min-height: 100px;
-	min-width: 1024px;
-
-	/* Set up proportionate scaling */
-	width: 100%;
-	height: auto;
-
-	/* Set up positioning */
-	position: absolute;
-
-	background: green;
-	z-index: 2000;
-	bottom:0px;
 }
