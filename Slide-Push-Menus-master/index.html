@@ -1,318 +1,339 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Slide &amp; Push Menus with CSS3 Transitions</title>
-  <meta name="description" content="Some slide and push menu demos using CSS3 transitions.">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/style.min.css">
-</head>
-<body>
+<style>
+/**
+ * Menu overview.
+ */
+.c-menu {
+  position: fixed;
+  z-index: 200;
+  background-color: #67b5d1;
+  transition: transform 0.3s;
+}
 
+.c-menu__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Close button resets.
+ */
+.c-menu__close {
+  color: #fff;
+  background-color: #3184a1;
+  font-size: 14px;
+  border: none;
+  box-shadow: none;
+  border-radius: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+/**
+ * Close button resets.
+ */
+.c-menu__close:focus {
+  outline: none;
+}
+
+/**
+ * Body states.
+ *
+ * When a menu is active, we want to hide the overflows on the body to prevent
+ * awkward document scrolling.
+ */
+body.has-active-menu {
+  overflow: hidden;
+}
+
+/**
+ * Mask component
+ */
+
+.c-mask {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  background-color: #000;
+  opacity: 0;
+  transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
+}
+
+.c-mask.is-active {
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.c-menu--slide-left,
+.c-menu--slide-right,
+.c-menu--push-left,
+.c-menu--push-right {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+@media all and (min-width: 320px) {
+  .c-menu--slide-left,
+  .c-menu--slide-right,
+  .c-menu--push-left,
+  .c-menu--push-right {
+    width: 300px;
+  }
+}
+
+.c-menu--slide-left .c-menu__item,
+.c-menu--slide-right .c-menu__item,
+.c-menu--push-left .c-menu__item,
+.c-menu--push-right .c-menu__item {
+  display: block;
+  text-align: center;
+  border-top: solid 1px #b5dbe9;
+  border-bottom: solid 1px #3184a1;
+}
+
+.c-menu--slide-left .c-menu__item:first-child,
+.c-menu--slide-right .c-menu__item:first-child,
+.c-menu--push-left .c-menu__item:first-child,
+.c-menu--push-right .c-menu__item:first-child {
+  border-top: none;
+}
+
+.c-menu--slide-left .c-menu__item:last-child,
+.c-menu--slide-right .c-menu__item:last-child,
+.c-menu--push-left .c-menu__item:last-child,
+.c-menu--push-right .c-menu__item:last-child {
+  border-bottom: none;
+}
+
+.c-menu--slide-left .c-menu__link,
+.c-menu--slide-right .c-menu__link,
+.c-menu--push-left .c-menu__link,
+.c-menu--push-right .c-menu__link {
+  display: block;
+  padding: 12px 24px;
+  color: #fff;
+}
+
+.c-menu--slide-left .c-menu__close,
+.c-menu--slide-right .c-menu__close,
+.c-menu--push-left .c-menu__close,
+.c-menu--push-right .c-menu__close {
+  display: block;
+  padding: 12px 24px;
+  width: 100%;
+}
+
+.c-menu--slide-right,
+.c-menu--push-right {
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+}
+
+@media all and (min-width: 320px) {
+  .c-menu--slide-right,
+  .c-menu--push-right {
+    transform: translateX(300px);
+  }
+}
+
+.c-menu--slide-right.is-active,
+.c-menu--push-right.is-active {
+  transform: translateX(0);
+}
+
+.o-wrapper.has-push-left {
+  transform: translateX(100%);
+}
+
+@media all and (min-width: 320px) {
+  .o-wrapper.has-push-left {
+    transform: translateX(300px);
+  }
+}
+
+.o-wrapper.has-push-right {
+  transform: translateX(-100%);
+}
+
+@media all and (min-width: 320px) {
+  .o-wrapper.has-push-right {
+    transform: translateX(-300px);
+  }
+}
+
+</style>
 <div id="o-wrapper" class="o-wrapper">
 
-  <header class="o-header">
-    <nav class="o-header-nav">
-      <a href="http://callmenick.com/_development/image-caption-reveal-on-hover/" class="o-header-nav__link"><i class="fa fa-arrow-left"></i> Previous Demo</a>
-      <a href="http://callmenick.com/post/slide-and-push-menus-with-css3-transitions" class="o-header-nav__link">Back To Article <i class="fa fa-star"></i></a>
-    </nav>
-    <div class="o-container">
-      <h1 class="o-header__title">Slide and Push Menus with CSS</h1>
-    </div>
-  </header><!-- /o-header -->
+  <div class="c-buttons">
+    <button id="c-button--push-right" class="c-button">Push Right</button>
+  </div>
 
-  <main class="o-content">
-    <div class="o-container">
-      
-      <div class="c-buttons">
-        <button id="c-button--slide-left" class="c-button">Slide Left</button>
-        <button id="c-button--slide-right" class="c-button">Slide Right</button>
-        <button id="c-button--push-left" class="c-button">Push Left</button>
-        <button id="c-button--push-right" class="c-button">Push Right</button>
-        <button id="c-button--slide-top" class="c-button">Slide Top</button>
-        <button id="c-button--slide-bottom" class="c-button">Slide Botton</button>
-        <button id="c-button--push-top" class="c-button">Push Top</button>
-        <button id="c-button--push-bottom" class="c-button">Push Bottom</button>
-      </div>
-      
-      <div id="github-icons"></div>
-
-    </div><!-- /o-container -->
-  </main><!-- /o-content -->
-
-  <footer class="o-footer">
-    <div class="o-container">
-      <small>&copy; 2015, callmenick.com</small>
-    </div>
-  </footer><!-- /o-footer -->
+  <!-- other content in here -->
 
 </div><!-- /o-wrapper -->
 
-<nav id="c-menu--slide-left" class="c-menu c-menu--slide-left">
-  <button class="c-menu__close">&larr; Close Menu</button>
-  <ul class="c-menu__items">
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Home</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">About</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Services</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Work</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Contact</a></li>
-  </ul>
-</nav><!-- /c-menu slide-left -->
-
-<nav id="c-menu--slide-right" class="c-menu c-menu--slide-right">
-  <button class="c-menu__close">Close Menu &rarr;</button>
-  <ul class="c-menu__items">
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Home</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">About</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Services</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Work</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Contact</a></li>
-  </ul>
-</nav><!-- /c-menu slide-right -->
-
-<nav id="c-menu--push-left" class="c-menu c-menu--push-left">
-  <button class="c-menu__close">&larr; Close Menu</button>
-  <ul class="c-menu__items">
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Home</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">About</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Services</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Work</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Contact</a></li>
-  </ul>
-</nav><!-- /c-menu push-left -->
-
-<nav id="c-menu--push-right" class="c-menu c-menu--push-right">
-  <button class="c-menu__close">Close Menu &rarr;</button>
-  <ul class="c-menu__items">
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Home</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">About</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Services</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Work</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Contact</a></li>
-  </ul>
-</nav><!-- /c-menu push-right -->
-
-<nav id="c-menu--slide-top" class="c-menu c-menu--slide-top">
-  <button class="c-menu__close"><strong>x</strong></button>
-  <ul class="c-menu__items">
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Home</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">About</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Services</a></li>
-  </ul>
-</nav><!-- /c-menu slide-top -->
-
-<nav id="c-menu--push-top" class="c-menu c-menu--push-top">
-  <button class="c-menu__close"><strong>x</strong></button>
-  <ul class="c-menu__items">
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Home</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">About</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Services</a></li>
-  </ul>
-</nav><!-- /c-menu push-top -->
-
-<nav id="c-menu--slide-bottom" class="c-menu c-menu--slide-bottom">
-  <button class="c-menu__close"><strong>x</strong></button>
-  <ul class="c-menu__items">
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Home</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">About</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Services</a></li>
-  </ul>
-</nav><!-- /c-menu slide-bottom -->
-
-<nav id="c-menu--push-bottom" class="c-menu c-menu--push-bottom">
-  <button class="c-menu__close"><strong>x</strong></button>
-  <ul class="c-menu__items">
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Home</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">About</a></li>
-    <li class="c-menu__item"><a href="#" class="c-menu__link">Services</a></li>
-  </ul>
-</nav><!-- /c-menu push-bottom -->
+<!-- menus here -->
 
 <div id="c-mask" class="c-mask"></div><!-- /c-mask -->
 
-<!-- menus script -->
-<script src="js/dist/menu.js"></script>
+
+
+<nav id="c-menu--push-right" class="c-menu c-menu--push-right">
+  <button class="c-menu__close">&larr; Close Menu</button>
+    <ul class="c-menu__items">
+      <li class="c-menu__item"><a href="#" class="c-menu__link">Home</a></li>
+      <li class="c-menu__item"><a href="#" class="c-menu__link">About</a></li>
+      <li class="c-menu__item"><a href="#" class="c-menu__link">Services</a></li>
+      <li class="c-menu__item"><a href="#" class="c-menu__link">Work</a></li>
+      <li class="c-menu__item"><a href="#" class="c-menu__link">Contact</a></li>
+    </ul>
+</nav><!-- /c-menu push-right -->
+
+
 <script>
-  
-  /**
-   * Slide left instantiation and action.
-   */
-  var slideLeft = new Menu({
-    wrapper: '#o-wrapper',
-    type: 'slide-left',
-    menuOpenerClass: '.c-button',
-    maskId: '#c-mask'
-  });
+(function(window) {
 
-  var slideLeftBtn = document.querySelector('#c-button--slide-left');
-  
-  slideLeftBtn.addEventListener('click', function(e) {
-    e.preventDefault;
-    slideLeft.open();
-  });
-
-
-
-
+  'use strict';
 
   /**
-   * Push left instantiation and action.
+   * Extend Object helper function.
    */
-  var pushLeft = new Menu({
-    wrapper: '#o-wrapper',
-    type: 'push-left',
-    menuOpenerClass: '.c-button',
-    maskId: '#c-mask'
-  });
-
-  var pushLeftBtn = document.querySelector('#c-button--push-left');
-  
-  pushLeftBtn.addEventListener('click', function(e) {
-    e.preventDefault;
-    pushLeft.open();
-  });
-
-
-
-
+  function extend(a, b) {
+    for(var key in b) {
+      if(b.hasOwnProperty(key)) {
+        a[key] = b[key];
+      }
+    }
+    return a;
+  }
 
   /**
-   * Slide right instantiation and action.
+   * Each helper function.
    */
-  var slideRight = new Menu({
-    wrapper: '#o-wrapper',
-    type: 'slide-right',
-    menuOpenerClass: '.c-button',
-    maskId: '#c-mask'
-  });
-
-  var slideRightBtn = document.querySelector('#c-button--slide-right');
-  
-  slideRightBtn.addEventListener('click', function(e) {
-    e.preventDefault;
-    slideRight.open();
-  });
-
-
-
-
+  function each(collection, callback) {
+    for (var i = 0; i < collection.length; i++) {
+      var item = collection[i];
+      callback(item);
+    }
+  }
 
   /**
-   * Push right instantiation and action.
+   * Menu Constructor.
    */
-  var pushRight = new Menu({
-    wrapper: '#o-wrapper',
-    type: 'push-right',
-    menuOpenerClass: '.c-button',
-    maskId: '#c-mask'
-  });
-
-  var pushRightBtn = document.querySelector('#c-button--push-right');
-  
-  pushRightBtn.addEventListener('click', function(e) {
-    e.preventDefault;
-    pushRight.open();
-  });
-
-
-
-
+  function Menu(options) {
+    this.options = extend({}, this.options);
+    extend(this.options, options);
+    this._init();
+  }
 
   /**
-   * Slide top instantiation and action.
+   * Menu Options.
    */
-  var slideTop = new Menu({
-    wrapper: '#o-wrapper',
-    type: 'slide-top',
-    menuOpenerClass: '.c-button',
-    maskId: '#c-mask'
-  });
-
-  var slideTopBtn = document.querySelector('#c-button--slide-top');
-  
-  slideTopBtn.addEventListener('click', function(e) {
-    e.preventDefault;
-    slideTop.open();
-  });
-
-
-
-
+  Menu.prototype.options = {
+    wrapper: '#o-wrapper',          // The content wrapper
+    type: 'slide-left',             // The menu type
+    menuOpenerClass: '.c-button',   // The menu opener class names (i.e. the buttons)
+    maskId: '#c-mask'               // The ID of the mask
+  };
 
   /**
-   * Push top instantiation and action.
+   * Initialise Menu.
    */
-  var pushTop = new Menu({
-    wrapper: '#o-wrapper',
-    type: 'push-top',
-    menuOpenerClass: '.c-button',
-    maskId: '#c-mask'
-  });
-
-  var pushTopBtn = document.querySelector('#c-button--push-top');
-  
-  pushTopBtn.addEventListener('click', function(e) {
-    e.preventDefault;
-    pushTop.open();
-  });
-
-
-
-
+  Menu.prototype._init = function() {
+    this.body = document.body;
+    this.wrapper = document.querySelector(this.options.wrapper);
+    this.mask = document.querySelector(this.options.maskId);
+    this.menu = document.querySelector('#c-menu--' + this.options.type);
+    this.closeBtn = this.menu.querySelector('.c-menu__close');
+    this.menuOpeners = document.querySelectorAll(this.options.menuOpenerClass);
+    this._initEvents();
+  };
 
   /**
-   * Slide bottom instantiation and action.
+   * Initialise Menu Events.
    */
-  var slideBottom = new Menu({
-    wrapper: '#o-wrapper',
-    type: 'slide-bottom',
-    menuOpenerClass: '.c-button',
-    maskId: '#c-mask'
-  });
+  Menu.prototype._initEvents = function() {
+    // Event for clicks on the close button inside the menu.
+    this.closeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      this.close();
+    }.bind(this));
 
-  var slideBottomBtn = document.querySelector('#c-button--slide-bottom');
-  
-  slideBottomBtn.addEventListener('click', function(e) {
-    e.preventDefault;
-    slideBottom.open();
-  });
-
-
-
-
+    // Event for clicks on the mask.
+    this.mask.addEventListener('click', function(e) {
+      e.preventDefault();
+      this.close();
+    }.bind(this));
+  };
 
   /**
-   * Push bottom instantiation and action.
+   * Open Menu.
    */
-  var pushBottom = new Menu({
-    wrapper: '#o-wrapper',
-    type: 'push-bottom',
-    menuOpenerClass: '.c-button',
-    maskId: '#c-mask'
-  });
+  Menu.prototype.open = function() {
+    this.body.classList.add('has-active-menu');
+    this.wrapper.classList.add('has-' + this.options.type);
+    this.menu.classList.add('is-active');
+    this.mask.classList.add('is-active');
+    this.disableMenuOpeners();
+  };
 
-  var pushBottomBtn = document.querySelector('#c-button--push-bottom');
-  
-  pushBottomBtn.addEventListener('click', function(e) {
-    e.preventDefault;
-    pushBottom.open();
-  });
+  /**
+   * Close Menu.
+   */
+  Menu.prototype.close = function() {
+    this.body.classList.remove('has-active-menu');
+    this.wrapper.classList.remove('has-' + this.options.type);
+    this.menu.classList.remove('is-active');
+    this.mask.classList.remove('is-active');
+    this.enableMenuOpeners();
+  };
 
+  /**
+   * Disable Menu Openers.
+   */
+  Menu.prototype.disableMenuOpeners = function() {
+    each(this.menuOpeners, function(item) {
+      item.disabled = true;
+    });
+  };
+
+  /**
+   * Enable Menu Openers.
+   */
+  Menu.prototype.enableMenuOpeners = function() {
+    each(this.menuOpeners, function(item) {
+      item.disabled = false;
+    });
+  };
+
+  /**
+   * Add to global namespace.
+   */
+  window.Menu = Menu;
+
+})(window);
+
+var slideLeft = new Menu({
+  wrapper: '#o-wrapper',
+  type: 'slide-left',
+  menuOpenerClass: '.c-button',
+  maskId: '#c-mask'
+});
+
+var slideLeftBtn = document.querySelector('#c-button--slide-left');
+
+slideLeftBtn.addEventListener('click', function(e) {
+  e.preventDefault;
+  slideLeft.open();
+});
 </script>
-
-<!-- EXTERNAL SCRIPTS FOR CALLMENICK.COM, PLEASE DO NOT INCLUDE -->
-<script src="js/dist/githubIcons.js"></script>
-<script src="js/dist/carbonAd.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-34160351-1', 'auto');
-  ga('send', 'pageview');
-</script>
-<!-- /EXTERNAL SCRIPTS -->
-
-</body>
-</html>
