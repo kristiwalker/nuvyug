@@ -20,6 +20,10 @@ h3{
 	border-color: #222;
 }
 
+.navbar-fixed-top{
+	max-height: 55px;
+}
+
 .navbar-default .navbar-nav>li>a{
 	font-family: "kanit";
 	font-size: 20px;
@@ -57,8 +61,81 @@ h3{
 	float: right;
 }
 
+/*Nav hamburger*/
+*{ padding: 0; margin: 0;
+}
+
+a{
+	text-decoration: none;
+	color: #00A5CC;
+}
+
+li{
+	list-style-type:
+	none;
+}
+
+#brand {
+	float: left;
+	line-height: 50px;
+	color: #E5DAC0;
+	font-size: 25px;
+	font-weight: bolder;
+   margin: 0 0 0 6px;
+}
+nav { width: 100%; text-align: center; }
+nav a {
+	display: block;
+	padding: 15px 20px;
+	color: #F0EADC;
+}
+nav a:hover {
+	 background: #E5DAC0;
+	 color: #FFF;
+	 text-decoration: none;
+}
+nav li:last-child a { border-bottom: none; }
+
+/*-----------------------------------------*/
+
+.hamburger{
+	max-width: 100px;
+}
+
+.menu {
+	overflow: visible;
+	min-width: 150px;
+	float: right;
+	height: 100%;
+	padding: 10px 0;
+	position: relative;
+	background: #138808;
+	right: -240px;
+	font-family: "kanit";
+	font-weight: 400;
+	font-size: 18px;
+	transition: all .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+
+}
+.menu-icon {
+	padding: 10px 20px;
+	color: #fff;
+	cursor: pointer;
+	float: right;
+	margin: 6px 6px 9px 0;
+	border-radius: 5px;
+}
+#menuToggle { display: none; }
+
+#menuToggle:checked ~ .menu { position: relative; right: 0; }
+
+
 .green-bar{
-	min-height: 100px;
+	min-height: 10%;
 	min-width: 1024px;
 
 	/* Set up proportionate scaling */

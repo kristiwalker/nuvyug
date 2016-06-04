@@ -48,7 +48,7 @@
 
         <!-- Nav -->
         <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container">
+          <div class="container-fluid">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -62,6 +62,23 @@
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><img class="sign-in-icon" src="images/sign-in-icon.png" />Sign-in</a></li>
                 <li><a href="#"><img class="location-btn" src="images/location-btn.png" /><span style="color: #F76D1E">Raleigh</span></a></li>
+                <li class="hamburger">
+                  <input type="checkbox" id="menuToggle">
+                  <label for="menuToggle" class="menu-icon">&#9776;</label>
+                  <nav class="menu">
+                  	<ul>
+                      	<li><a href="#">Home</a></li>
+                          <li><a href="#">Event</a></li>
+                          <li><a href="#">Contact</a></li>
+                          <li><a href="#">Performers</a></li>
+                          <li><a href="#">Partners</a></li>
+                          <li><a href="#">Sponsor</a></li>
+                          <li><a href="#">Vendors</a></li>
+                          <li><a href="#">Volunteer</a></li>
+                          <li><a href="#">About Us</a></li>
+                      </ul>
+                  </nav>
+                </ul>
               </ul>
             </div><!--/.nav-collapse -->
           </div>
@@ -78,163 +95,83 @@
 
 
 
+
+
       <div class="container demo-1">
 
       <!-- Slider -->
-            <div id="slider" class="sl-slider-wrapper">
+          <div id="slider" class="sl-slider-wrapper">
 
-				<div class="sl-slider">
+    				<div class="sl-slider">
 
-					<div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-						<div class="sl-slide-inner">
-							<div></div>
-							<h2>DANCE</h2>
-							<blockquote><p>You have just dined, and however scrupulously the slaughterhouse is concealed in the graceful distance of miles, there is complicity.</p><cite>Ralph Waldo Emerson</cite></blockquote>
+    					<div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+    						<div class="sl-slide-inner">
+    							<div></div>
+    							<h2>DANCE</h2>
+    							<blockquote><p>You have just dined, and however scrupulously the slaughterhouse is concealed in the graceful distance of miles, there is complicity.</p><cite>Ralph Waldo Emerson</cite></blockquote>
+                </div>
+    					</div>
+
+    					<div class="sl-slide bg-2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+    						<div class="sl-slide-inner">
+    							<div class="deco" data-icon="q"></div>
+    							<h2>Regula aurea</h2>
+    							<blockquote><p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p><cite>Albert Schweitzer</cite></blockquote>
+    						</div>
+    					</div>
+
+    					<div class="sl-slide bg-3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+    						<div class="sl-slide-inner">
+    							<div class="deco" data-icon="O"></div>
+    							<h2>Dum spiro, spero</h2>
+    							<blockquote><p>Thousands of people who say they 'love' animals sit down once or twice a day to enjoy the flesh of creatures who have been utterly deprived of everything that could make their lives worth living and who endured the awful suffering and the terror of the abattoirs.</p><cite>Dame Jane Morris Goodall</cite></blockquote>
+    						</div>
+    					</div>
+
+    					<div class="sl-slide bg-4" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
+    						<div class="sl-slide-inner">
+    							<div class="deco" data-icon="I"></div>
+    							<h2>Donna nobis pacem</h2>
+    							<blockquote><p>The human body has no more need for cows' milk than it does for dogs' milk, horses' milk, or giraffes' milk.</p><cite>Michael Klaper M.D.</cite></blockquote>
+    						</div>
+    					</div>
+
+    					<div class="sl-slide bg-5" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
+    						<div class="sl-slide-inner">
+    							<div class="deco" data-icon="t"></div>
+    							<h2>Acta Non Verba</h2>
+    							<blockquote><p>I think if you want to eat more meat you should kill it yourself and eat it raw so that you are not blinded by the hypocrisy of having it processed for you.</p><cite>Margi Clarke</cite></blockquote>
+    						</div>
+    					</div>
+    				</div><!-- /sl-slider -->
+
+    				<nav id="nav-arrows" class="nav-arrows">
+    					<span class="nav-arrow-prev">Previous</span>
+    					<span class="nav-arrow-next">Next</span>
+    				</nav>
+
+            <div class="container-fluid">
+              <div class="green-bar">
+
+              </div>
             </div>
-					</div>
 
-					<div class="sl-slide bg-2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
-						<div class="sl-slide-inner">
-							<div class="deco" data-icon="q"></div>
-							<h2>Regula aurea</h2>
-							<blockquote><p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p><cite>Albert Schweitzer</cite></blockquote>
-						</div>
-					</div>
+    				<!-- <nav id="nav-dots" class="nav-dots">
+    					<span class="nav-dot-current"></span>
+    					<span></span>
+    					<span></span>
+    					<span></span>
+    					<span></span>
+    				</nav> -->
 
-					<div class="sl-slide bg-3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
-						<div class="sl-slide-inner">
-							<div class="deco" data-icon="O"></div>
-							<h2>Dum spiro, spero</h2>
-							<blockquote><p>Thousands of people who say they 'love' animals sit down once or twice a day to enjoy the flesh of creatures who have been utterly deprived of everything that could make their lives worth living and who endured the awful suffering and the terror of the abattoirs.</p><cite>Dame Jane Morris Goodall</cite></blockquote>
-						</div>
-					</div>
-
-					<div class="sl-slide bg-4" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
-						<div class="sl-slide-inner">
-							<div class="deco" data-icon="I"></div>
-							<h2>Donna nobis pacem</h2>
-							<blockquote><p>The human body has no more need for cows' milk than it does for dogs' milk, horses' milk, or giraffes' milk.</p><cite>Michael Klaper M.D.</cite></blockquote>
-						</div>
-					</div>
-
-					<div class="sl-slide bg-5" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
-						<div class="sl-slide-inner">
-							<div class="deco" data-icon="t"></div>
-							<h2>Acta Non Verba</h2>
-							<blockquote><p>I think if you want to eat more meat you should kill it yourself and eat it raw so that you are not blinded by the hypocrisy of having it processed for you.</p><cite>Margi Clarke</cite></blockquote>
-						</div>
-					</div>
-				</div><!-- /sl-slider -->
-
-				<nav id="nav-arrows" class="nav-arrows">
-					<span class="nav-arrow-prev">Previous</span>
-					<span class="nav-arrow-next">Next</span>
-				</nav>
-
-        <div class="container-fluid">
-          <div class="green-bar">
-
-          </div>
-        </div>
-
-				<!-- <nav id="nav-dots" class="nav-dots">
-					<span class="nav-dot-current"></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-				</nav> -->
-
-			</div><!-- /slider-wrapper -->
+    			</div><!-- /slider-wrapper -->
 
         </div>
-        
+
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
 		<script type="text/javascript" src="js/jquery.slitslider.js"></script>
-		<script type="text/javascript">
-			$(function() {
-
-				var Page = (function() {
-
-					var $navArrows = $( '#nav-arrows' ),
-						$nav = $( '#nav-dots > span' ),
-						slitslider = $( '#slider' ).slitslider( {
-							onBeforeChange : function( slide, pos ) {
-
-								$nav.removeClass( 'nav-dot-current' );
-								$nav.eq( pos ).addClass( 'nav-dot-current' );
-
-							}
-						} ),
-
-						init = function() {
-
-							initEvents();
-
-						},
-						initEvents = function() {
-
-							// add navigation events
-							$navArrows.children( ':last' ).on( 'click', function() {
-
-								slitslider.next();
-								return false;
-
-							} );
-
-							$navArrows.children( ':first' ).on( 'click', function() {
-
-								slitslider.previous();
-								return false;
-
-							} );
-
-							$nav.each( function( i ) {
-
-								$( this ).on( 'click', function( event ) {
-
-									var $dot = $( this );
-
-									if( !slitslider.isActive() ) {
-
-										$nav.removeClass( 'nav-dot-current' );
-										$dot.addClass( 'nav-dot-current' );
-
-									}
-
-									slitslider.jump( i + 1 );
-									return false;
-
-								} );
-
-							} );
-
-						};
-
-						return { init : init };
-
-				})();
-
-				Page.init();
-
-				/**
-				 * Notes:
-				 *
-				 * example how to add items:
-				 */
-
-				/*
-
-				var $items  = $('<div class="sl-slide sl-slide-color-2" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1"><div class="sl-slide-inner bg-1"><div class="sl-deco" data-icon="t"></div><h2>some text</h2><blockquote><p>bla bla</p><cite>Margi Clarke</cite></blockquote></div></div>');
-
-				// call the plugin's add method
-				ss.add($items);
-
-				*/
-
-			});
-		</script>
+    <script type="text/javascript" src="js/script.js"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <!-- Latest compiled and minified JavaScript -->
