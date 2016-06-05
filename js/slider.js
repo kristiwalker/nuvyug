@@ -86,7 +86,7 @@ var winWidth = $(window).width();
 var winHeight = $(window).height();
 
 // set initial div height / width
-$('.hamburger .demo-1, .sl-slide, .sl-slides-wrapper, .sl-slide-inner').css({
+$('.demo-1, .sl-slide, .sl-slides-wrapper, .sl-slide-inner').css({
     'width': winWidth,
     'height': winHeight,
 });
