@@ -11,17 +11,19 @@
         <meta name="author" content="Kristi Walker, kristiwalker.com" />
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/slider-style.css" />
         <link rel="stylesheet" type="text/css" href="css/slider-custom.css" />
-        <link rel="stylesheet" href="css/jquery.countdown.css">
-        <style type="text/css">
-        #defaultCountdown { width: 240px; height: 45px; }
-        </style>
+        <link rel="stylesheet" href="css/jquery.countdown.css" />
+        <link rel="stylesheet" href="css/to-top-reset.css"> <!-- CSS reset -->
+        <link rel="stylesheet" href="css/to-top.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+
 
         <link rel="shortcut icon" href="../favicon.ico">
 
     		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+        <script src="js/modernizr.js"></script> <!-- Modernizr -->
+
 
     		<!--PROBABLY NOT NECESSARY. DELETE IF FUNCTIONAL WITHOUT!
          <noscript>
@@ -34,7 +36,7 @@
 
     <body>
 
-        <!-- Nav -->
+<!-- Nav -->
         <nav class="navbar navbar-default navbar-fixed-top">
           <div class="container-fluid">
             <div class="navbar-header">
@@ -73,16 +75,8 @@
         </nav><!--/.nav -->
 
 
-      <!-- Logo -->
-      <!-- <div class="container">
-        <div class="logo">
-          <img src="images/logo-white_nuvyug_v1.png" />
-        </div>
-      </div> -->
-      <!-- /Logo -->
 
-
-      <!-- Slider -->
+<!-- Slider -->
       <div class="container demo-1">
 
           <div id="slider" class="sl-slider-wrapper">
@@ -93,43 +87,41 @@
     						<div class="sl-slide-inner">
     							<div></div>
     							<h2>DANCE</h2>
-    							<blockquote><p>You have just dined, and however scrupulously the slaughterhouse is concealed in the graceful distance of miles, there is complicity.</p><cite>Ralph Waldo Emerson</cite></blockquote>
                 </div>
     					</div>
 
     					<div class="sl-slide bg-2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
     						<div class="sl-slide-inner">
-    							<div class="deco" data-icon="q"></div>
-    							<h2>Regula aurea</h2>
-    							<blockquote><p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p><cite>Albert Schweitzer</cite></blockquote>
+    							<h2>MUSIC</h2>
     						</div>
     					</div>
 
     					<div class="sl-slide bg-3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
     						<div class="sl-slide-inner">
-    							<div class="deco" data-icon="O"></div>
-    							<h2>Dum spiro, spero</h2>
-    							<blockquote><p>Thousands of people who say they 'love' animals sit down once or twice a day to enjoy the flesh of creatures who have been utterly deprived of everything that could make their lives worth living and who endured the awful suffering and the terror of the abattoirs.</p><cite>Dame Jane Morris Goodall</cite></blockquote>
+    							<h2>FASHION</h2>
     						</div>
     					</div>
 
     					<div class="sl-slide bg-4" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
     						<div class="sl-slide-inner">
-    							<div class="deco" data-icon="I"></div>
-    							<h2>Donna nobis pacem</h2>
-    							<blockquote><p>The human body has no more need for cows' milk than it does for dogs' milk, horses' milk, or giraffes' milk.</p><cite>Michael Klaper M.D.</cite></blockquote>
+    							<h2>CRAFTS</h2>
     						</div>
     					</div>
 
     					<div class="sl-slide bg-5" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
     						<div class="sl-slide-inner">
-    							<div class="deco" data-icon="t"></div>
-    							<h2>Acta Non Verba</h2>
-    							<blockquote><p>I think if you want to eat more meat you should kill it yourself and eat it raw so that you are not blinded by the hypocrisy of having it processed for you.</p><cite>Margi Clarke</cite></blockquote>
+    							<h2>CUISINE</h2>
     						</div>
     					</div>
 
+              <div class="sl-slide bg-2" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
+                <div class="sl-slide-inner">
+                  <h2>EXHIBITION</h2>
+                </div>
+              </div>
+<!--Green bar-->
               <div class="container-fluid green-bar">
+
                 <div class="row">
                   <div class="col-xs-12 col-xs-12 col-md-6 col-lg-6">
                     <div id="defaultCountdown"></div>
@@ -140,7 +132,8 @@
                     </div>
                   </div>
                 </div>
-              </div>
+
+              </div><!-- /Green bar-->
 
 
     				</div><!-- /sl-slider -->
@@ -151,9 +144,6 @@
     				</nav>
 
             </div>
-
-
-
 
     				<!-- <nav id="nav-dots" class="nav-dots">
     					<span class="nav-dot-current"></span>
@@ -167,16 +157,80 @@
 
         </div><!-- / container demo1 -->
 
-        <!-- <div class="container">
-          <div id="defaultCountdown" class="countdown is-countdown">
-          </div>
-        </div> -->
 
+<!--Content after scroll-->
+        <div class="container-fluid">
+
+<!--Schedule-->
+          <div class="row">
+            <div class="col-xs-12 col-md-6 schedule-left"></div>
+            <div class="col-xs-12 col-md-6 schedule-right">
+              <div class="schedule-txt">
+                March<br>
+                19-20
+              </div>
+              <div class="schedule-btn">
+                <a href="#">View Schedule</a>
+              </div>
+            </div>
+          </div>
+
+<!--Directions-->
+          <div class="row">
+            <div class="col-xs-12 col-md-6 directions-left">
+              <div class="directions-txt">
+                Exposition Center<br>
+                State Fairgrounds<br>
+                Raleigh, NC
+              </div>
+              <div class="directions-btn">
+                <a href="#">View Directions</a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-6 directions-right"></div>
+          </div>
+
+<!--Dancer & about section-->
+          <div class="row">
+            <div class="col-xs-12 col-md-4 dancer-section">
+              <img class="orange-dancer" src="images/orange-dancer.png" />
+            </div>
+            <div class="col-xs-12 col-md-8 about-section">
+              <h3><span style="color: #F76D1E">Interesting sentence about Nuv Yug here.</span></h3>
+              <p class="about-txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristiqumsan. Pellentesque elit tortor, adipiscing vel velit in, ultricies fermentum nulla. Donec in urna sem. Nulla facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur.</p>
+            </div>
+          </div>
+
+<!--Quote-->
+          <div class="row">
+            <div class="col-xs-12 quote-section">
+              <h3>
+                <span style="font-size: 35px; font-weight: 400">
+                  “QUOTE ABOUT NUV YUG EXPERIENCE FROM PARTICIPANT.”
+                </span>
+              </h3>
+            </div>
+          </div>
+
+<!--Bottom img-->
+          <div class="row">
+            <div class="col-xs-12 bottom-image"></div>
+          </div>
+
+<!--Footer-->
+          <div class="row">
+            <div class="col-xs-12 footer-section">
+              <p class="footer-text">Copyright © 2003-2016 Nuv Yug Cultural Organization, Raleigh, North Carolina</p>
+            </div>
+          </div>
+
+        </div> <!--/ Content after scroll-->
 
 
         <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
 
 
+        <a href="#0" class="cd-top">Top</a>
 
 
         <!-- For more detail see the <a href="http://keith-wood.name/countdownRef.html">documentation reference</a> page. -->
@@ -184,14 +238,18 @@
 
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
-		<script type="text/javascript" src="js/jquery.slitslider.js"></script>
-    <script type="text/javascript" src="js/slider.js"></script>
-    <script type="text/javascript" src="js/sicky-nav.js"></script>
-    <script src="js/jquery.plugin.js"></script>
-    <script src="js/jquery.countdown.js"></script>
-    <script type="text/javascript" src="js/countdown.js"></script>
+
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="js/jquery.slitslider.js"></script>
+    <script type="text/javascript" src="js/slider.js"></script>
+    <script type="text/javascript" src="js/sticky-nav.js"></script>
+    <script src="js/jquery.plugin.js"></script> <!--For countdown-->
+    <script src="js/jquery.countdown.js"></script>
+    <script type="text/javascript" src="js/countdown.js"></script>
+    <script src="js/to-top.js"></script> <!--back to top jquery-->
+
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   </body>

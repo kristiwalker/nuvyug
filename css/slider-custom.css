@@ -204,7 +204,7 @@
 	width: 80%;
 	left: 10%;
 	text-align: center;
-	line-height: 50px;
+	line-height: 140px;
 	bottom: 50%;
 	margin: 0 0 -60px 0;
 }
@@ -261,7 +261,7 @@
 /* First Slide */
 .demo-1 .bg-1 .sl-slide-inner,
 .demo-1 .bg-1 .sl-content-slice {
-	background-image: url("images/slider1.jpg")
+	background-image: url("images/slider-1.jpg");
 }
 
 /* Second Slide */

@@ -97,4 +97,18 @@ $(window).resize(function(){
     'width': winWidth,
     'height': winHeight,
 });
+  if(winWidth != $(window).width()){
+  location.reload();
+  return;
+  }
 });
+
+// jQuery(function($){
+//
+// $(window).resize(function() {
+//     if(winWidth != $(window).width()){
+//     location.reload();
+//     return;
+//     }
+// });
+// });

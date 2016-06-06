@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5, h6{
+p, h1, h2, h3, h4, h5, h6{
 	margin-top: 0;
 	line-height: normal;
 	font-family: "kanit";
@@ -7,13 +7,14 @@ h1, h2, h3, h4, h5, h6{
 h2{
 	text-align: center;
 	text-transform: uppercase;
-	color: white;
+	color: #fff;
 	font-size: 50px;
 }
 
 h3{
 	font-family: "kanit";
-	font-weight: 300;
+	font-weight: 500;
+	font-size: 25px;
 }
 
 /*.logo{
@@ -146,9 +147,8 @@ nav li:last-child a { border-bottom: none; }
 
 #menuToggle:checked ~ .menu { position: relative; right: 0; }
 
-
 .green-bar{
-	min-height: 80px;
+	min-height: 90px;
 	position: absolute;
 	bottom: 0;
 	z-index: 1000;
@@ -158,8 +158,14 @@ nav li:last-child a { border-bottom: none; }
 
 	/* Set up positioning */
 
-	background: green;
+	background: #138808;
 }
+
+#defaultCountdown{
+	width: 240px;
+	height: 45px;
+}
+
 
 /*.filler{
 	height: 1000px;
@@ -180,9 +186,135 @@ nav li:last-child a { border-bottom: none; }
 	border-width: 3px;
 	border-style: solid;
 	border-color: white;
-	margin-top: 12px;
+	margin-top: 16px;
 }
 
 .register{
 	line-height: 50px;
+}
+
+.schedule-left, .schedule-right, .directions-left, .directions-right{
+	height: 300px;
+	image-orientation:
+}
+
+.schedule-left{
+	background-image: url("images/drummers.jpg");
+	background-size: cover;
+}
+
+.schedule-right{
+	background-color: #F76D1E;
+}
+
+.schedule-txt{
+	font-family: "kanit";
+	font-weight: 500;
+	line-height: 65px;
+	text-align: center;
+	font-size: 80px;
+	color: #fff;
+	padding-top: 50px;
+}
+
+.schedule-btn, .directions-btn{
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: "kanit";
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.schedule-btn{
+	width: 255px;
+	height: 45px;
+	font-size: 30px;
+	color: #F76D1E;
+	background-color: #fff;
+}
+
+.schedule-btn a{
+	color: #F76D1E;
+}
+
+.directions-left{
+	background-color: #138808;
+}
+
+.directions-right{
+	background-image: url("images/3-dancers.jpg");
+	background-size: cover;
+}
+
+.directions-txt{
+	font-family: "kanit";
+	font-weight: 500;
+	line-height: 55px;
+	text-align: center;
+	font-size: 50px;
+	color: #fff;
+	padding-top: 30px;
+}
+
+.directions-btn{
+	width: 270px;
+	height: 45px;
+	font-size: 30px;
+	color: #138808;
+	background-color: #fff;}
+
+.directions-btn a{
+	color: #138808;
+}
+
+.dancer-section{
+	height: 350px;
+	margin-right: 0px;
+}
+
+.orange-dancer{
+	float: right;
+	height: 360px;
+	/*position: absolute;*/
+	/*bottom: 0;*/
+	padding-top: 50px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+.about-section{
+	height: 350px;
+	padding: 80px 250px 0 30px;
+}
+
+.about-txt{
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.quote-section{
+	background-color: #F76D1E;
+	height: 100px;
+	color: white;
+	text-align: center;
+	padding-top: 26px;
+	letter-spacing: 1px;
+}
+
+.bottom-image{
+	height: 300px;
+	background-color: grey;
+}
+
+.footer-section{
+	background-color: #222;
+	height: 50px;
+	padding-top: 15px;
+}
+
+.footer-text{
+	color: white;
+	text-align: center;
+	font-weight: 300;
 }
