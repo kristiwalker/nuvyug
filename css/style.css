@@ -1,7 +1,16 @@
+@font-face {
+    font-family: "kanit";
+    src: url("fonts/kanit/Kanit-SemiBold.ttf");
+}
+
 p, h1, h2, h3, h4, h5, h6{
 	margin-top: 0;
 	line-height: normal;
 	font-family: "kanit";
+}
+
+P{
+	font-weight: 300;
 }
 
 h2{
@@ -224,6 +233,7 @@ nav li:last-child a { border-bottom: none; }
 	font-family: "kanit";
 	text-align: center;
 	text-transform: uppercase;
+	padding-top: 7px;
 }
 
 .schedule-btn{
