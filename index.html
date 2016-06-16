@@ -13,10 +13,12 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/slider-style.css" />
         <link rel="stylesheet" type="text/css" href="css/slider-custom.css" />
-        <link rel="stylesheet" href="css/jquery.countdown.css" />
+        <!-- <link rel="stylesheet" href="css/jquery.countdown.css" /> -->
         <link rel="stylesheet" href="css/to-top-reset.css"> <!-- CSS reset -->
         <link rel="stylesheet" href="css/to-top.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/countdown.css" media="screen">
+
 
 
         <link rel="shortcut icon" href="../favicon.ico">
@@ -124,7 +126,9 @@
 
                 <div class="row">
                   <div class="col-xs-12 col-xs-12 col-md-6 col-lg-6">
-                    <div id="defaultCountdown"></div>
+                    <!-- <div id="defaultCountdown"></div> -->
+                    <div class="countdown styled"></div>
+                    <!-- <div class="countdown"></div> -->
                   </div>
                   <div class="col-xs-12 col-xs-12 col-md-6 col-lg-6">
                     <div class="register-btn">
@@ -235,20 +239,81 @@
 
         <!-- For more detail see the <a href="http://keith-wood.name/countdownRef.html">documentation reference</a> page. -->
 
-
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-		<script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
+		<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
 
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="js/jquery.slitslider.js"></script>
     <script type="text/javascript" src="js/slider.js"></script>
     <script type="text/javascript" src="js/sticky-nav.js"></script>
-    <script src="js/jquery.plugin.js"></script> <!--For countdown-->
-    <script src="js/jquery.countdown.js"></script>
-    <script type="text/javascript" src="js/countdown.js"></script>
+    <!-- <script src="js/jquery.plugin.js"></script> <!--For countdown--> -->
+    <!-- <script src="js/jquery.countdown.js"></script> -->
+    <!-- <script type="text/javascript" src="js/countdown.js"></script> -->
+    <script type="text/javascript" src="js/jquery.countdown.js"></script>
     <script src="js/to-top.js"></script> <!--back to top jquery-->
 
+    <script>
+      $(function() {
+        var endDate = "June 7, 2087 15:03:25";
+
+        $('.countdown.simple').countdown({ date: endDate });
+
+        $('.countdown.styled').countdown({
+          date: endDate,
+          render: function(data) {
+            $(this.el).html("<div>" + this.leadingZeros(data.days, 3) + " <span>days</span></div><div>" + this.leadingZeros(data.hours, 2) + " <span>hrs</span></div><div>" + this.leadingZeros(data.min, 2) + " <span>min</span></div><div>" + this.leadingZeros(data.sec, 2) + " <span>sec</span></div>");
+          }
+        });
+
+        $('.countdown.callback').countdown({
+          date: +(new Date) + 10000,
+          render: function(data) {
+            $(this.el).text(this.leadingZeros(data.sec, 2) + " sec");
+          },
+          onEnd: function() {
+            $(this.el).addClass('ended');
+          }
+        }).on("click", function() {
+          $(this).removeClass('ended').data('countdown').update(+(new Date) + 10000).start();
+        });
+
+        // End time for diff purposes
+        var endTimeDiff = new Date().getTime() + 15000;
+        // This is server's time
+        var timeThere = new Date();
+        // This is client's time (delayed)
+        var timeHere = new Date(timeThere.getTime() - 5434);
+        // Get the difference between client time and server time
+        var diff_ms = timeHere.getTime() - timeThere.getTime();
+        // Get the rounded difference in seconds
+        var diff_s = diff_ms / 1000 | 0;
+
+        var notice = [];
+        notice.push('Server time: ' + timeThere.toDateString() + ' ' + timeThere.toTimeString());
+        notice.push('Your time: ' + timeHere.toDateString() + ' ' + timeHere.toTimeString());
+        notice.push('Time difference: ' + diff_s + ' seconds (' + diff_ms + ' milliseconds to be precise). Your time is a bit behind.');
+
+        $('.offset-notice').html(notice.join('<br />'));
+
+        $('.offset-server .countdown').countdown({
+          date: endTimeDiff,
+          offset: diff_s * 1000,
+          onEnd: function() {
+            $(this.el).addClass('ended');
+          }
+        });
+
+        $('.offset-client .countdown').countdown({
+          date: endTimeDiff,
+          onEnd: function() {
+            $(this.el).addClass('ended');
+          }
+        });
+
+      });
+    </script>
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
