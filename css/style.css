@@ -202,6 +202,12 @@ nav li:last-child a { border-bottom: none; }
 	line-height: 50px;
 }
 
+/*After Scroll*/
+
+.after-scroll {
+  margin-top: 100vh;
+}
+
 .schedule-left, .schedule-right, .directions-left, .directions-right{
 	height: 300px;
 	image-orientation:

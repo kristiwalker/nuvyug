@@ -568,3 +568,16 @@
 	}
 
 }
+
+
+/*Edits by Kristi Walker*/
+
+.sl-slide-inner {
+	height: 100vh;
+}
+
+.slider-copy {
+	border: white;
+	border: 6px;
+	border-style: double;
+}

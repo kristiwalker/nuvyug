@@ -81,27 +81,27 @@ $(function() {
 });
 
 
-// global vars
-var winWidth = $(window).width();
-var winHeight = $(window).height();
+// // global vars
+// var winWidth = $(window).width();
+// var winHeight = $(window).height();
+//
+// // set initial div height / width
+// $('.demo-1, .sl-slide, .sl-slides-wrapper, .sl-slide-inner').css({
+//     'width': winWidth,
+//     'height': winHeight,
+// });
 
-// set initial div height / width
-$('.demo-1, .sl-slide, .sl-slides-wrapper, .sl-slide-inner').css({
-    'width': winWidth,
-    'height': winHeight,
-});
-
-// make sure div stays full width/height on resize
-$(window).resize(function(){
-    $('div').css({
-    'width': winWidth,
-    'height': winHeight,
-});
-  if(winWidth != $(window).width()){
-  location.reload();
-  return;
-  }
-});
+// // make sure div stays full width/height on resize
+// $(window).resize(function(){
+//     $('div').css({
+//     'width': winWidth,
+//     'height': winHeight,
+// });
+//   if(winWidth != $(window).width()){
+//   location.reload();
+//   return;
+//   }
+// });
 
 // jQuery(function($){
 //
