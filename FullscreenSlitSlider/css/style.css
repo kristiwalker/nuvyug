@@ -14,13 +14,15 @@
 
 /* Slide wrapper and slides */
 
-.sl-slide {
+.sl-slide,
+.sl-slides-wrapper,
+.sl-slide-inner {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
-}
+} 
 
 .sl-slide {
 	z-index: 1;
@@ -110,8 +112,3 @@
 	background: #ccc;
 }
 
-/* Edits by Kristi Walker */
-
-.demo-1.sl-slide h2{
-	line-height: 200px;
-}
