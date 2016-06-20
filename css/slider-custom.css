@@ -261,13 +261,15 @@
 /* First Slide */
 .demo-1 .bg-1 .sl-slide-inner,
 .demo-1 .bg-1 .sl-content-slice {
+	background: #222;
 	background-image: url("images/slider-1.jpg");
 }
 
 /* Second Slide */
 .demo-1 .bg-2 .sl-slide-inner,
 .demo-1 .bg-2 .sl-content-slice {
-	background: #000;
+	background: #222;
+	background-image: url("images/slider-2.jpg");
 }
 
 .demo-1 .bg-2 [data-icon]:after,
@@ -282,7 +284,8 @@
 /* Third Slide */
 .demo-1 .bg-3 .sl-slide-inner,
 .demo-1 .bg-3 .sl-content-slice {
-	background: #db84ad;
+	background: #222;
+	background-image: url("images/slider-3.jpg");
 }
 
 .demo-1 .bg-3 .deco {
@@ -309,7 +312,8 @@
 /* Forth Slide */
 .demo-1 .bg-4 .sl-slide-inner,
 .demo-1 .bg-4 .sl-content-slice {
-	background: #5bc2ce;
+	background: #222;
+	background-image: url("images/slider-4.jpg");
 }
 
 .demo-1 .bg-4 .deco {
@@ -334,7 +338,8 @@
 /* Fifth Slide */
 .demo-1 .bg-5 .sl-slide-inner,
 .demo-1 .bg-5 .sl-content-slice {
-	background: #ffeb41;
+	background: #222;
+	background-image: url("images/slider-5.jpg");
 }
 
 .demo-1 .bg-5 .deco {
@@ -355,6 +360,33 @@
 .demo-1 .bg-5 blockquote:before {
 	color: #ecd82c;
 }
+
+/* 6th Slide */
+.demo-1 .bg-6 .sl-slide-inner,
+.demo-1 .bg-6 .sl-content-slice {
+	background: #222;
+	background-image: url("images/slider-6.jpg");
+}
+
+.demo-1 .bg-6 .deco {
+	border-color: #ECD82C;
+}
+
+.demo-1 .bg-6 .deco:after {
+	color: #000;
+	text-shadow: 0 0 1px #000;
+}
+
+.demo-1 .bg-6 h2,
+.demo-1 .bg-6 blockquote{
+	color: #000;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+.demo-1 .bg-6 blockquote:before {
+	color: #ecd82c;
+}
+
 
 .demo-2 .bg-img-1 {
 	background-image: url(../images/1.jpg);
@@ -576,8 +608,14 @@
 	height: 100vh;
 }
 
-.slider-copy {
+.border {
 	border: white;
 	border: 6px;
 	border-style: double;
+	width: 1000px;
+	height: 300px;
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

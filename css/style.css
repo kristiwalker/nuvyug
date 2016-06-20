@@ -215,8 +215,10 @@ nav li:last-child a { border-bottom: none; }
 }
 
 .schedule-left{
-	background-image: url("images/drummers.jpg");
+	background-image: url("images/spirit-fingers.jpg");
 	background-size: cover;
+  background-position: top;
+  background-size: cover;
 }
 
 .schedule-right{
@@ -321,6 +323,9 @@ nav li:last-child a { border-bottom: none; }
 .bottom-image{
 	height: 300px;
 	background-color: grey;
+  background-image: url("images/bottom-image.jpg");
+  background-size: cover;
+  background-position: bottom;
 }
 
 .footer-section{
