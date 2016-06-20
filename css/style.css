@@ -7,6 +7,7 @@ p, h1, h2, h3, h4, h5, h6{
 	margin-top: 0;
 	line-height: normal;
 	font-family: "kanit";
+  color: #222;
 }
 
 P{
@@ -312,7 +313,6 @@ nav li:last-child a { border-bottom: none; }
 .quote-section{
 	background-color: #F76D1E;
 	height: 100px;
-	color: white;
 	text-align: center;
 	padding-top: 26px;
 	letter-spacing: 1px;
