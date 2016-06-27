@@ -8,6 +8,7 @@ html,body {
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
+    margin-bottom: -15px;
 }
 
 a:link {
@@ -196,7 +197,6 @@ nav li:last-child a { border-bottom: none; }
 	position: absolute;
 	bottom: 0;
 	z-index: 1000 ;
-  padding-right: 0px;
 
 	/* Set up proportionate scaling */
 	width: 100%;
@@ -261,8 +261,6 @@ nav li:last-child a { border-bottom: none; }
 .after-scroll {
   margin-top: 100vh;
   z-index: 9999;
-  padding-right: 0px;
-  padding-left: 21px;
 }
 
 .schedule-left, .schedule-right, .directions-left, .directions-right{
@@ -355,18 +353,24 @@ nav li:last-child a { border-bottom: none; }
 
 .dancer-section-mobile {
   display: none;
-  height: 350px;
-  margin-right: 0px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.orange-dancer{
+.orange-dancer-desktop{
 	float: right;
-	height: 360px;
 	/*position: absolute;*/
 	/*bottom: 0;*/
 	padding-top: 50px;
 	margin-bottom: 0px;
 	padding-bottom: 0px;
+}
+
+.orange-dancer-mobile {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  height: 200px;
 }
 
 .about-section{
@@ -417,9 +421,10 @@ nav li:last-child a { border-bottom: none; }
     .register-btn{
       margin: 0 auto 10px auto;
     }
-    .countdown-container {
-      margin-left: auto;
-      margin-right: auto;
+    .countdown {
+      min-width: 260px;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
     }
     .directions-txt {
       font-size: 40px;
