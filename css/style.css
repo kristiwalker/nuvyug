@@ -8,7 +8,7 @@ html,body {
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
-    margin-bottom: -15px;
+    margin-bottom: -18px;
 }
 
 a:link {
@@ -40,6 +40,8 @@ h3{
 	font-family: "kanit";
 	font-weight: 500;
 	font-size: 25px;
+  line-height: 29px;
+  margin-bottom: 8px;
 }
 
 /*.logo{
@@ -265,14 +267,12 @@ nav li:last-child a { border-bottom: none; }
 
 .schedule-left, .schedule-right, .directions-left, .directions-right{
 	min-height: 300px;
-	image-orientation:
 }
 
 .schedule-left{
 	background-image: url("images/spirit-fingers.jpg");
 	background-size: cover;
   background-position: top;
-  background-size: cover;
 }
 
 .schedule-right{
@@ -286,7 +286,7 @@ nav li:last-child a { border-bottom: none; }
 	text-align: center;
 	font-size: 80px;
 	color: #fff;
-	padding-top: 50px;
+	padding-top: 40px;
 }
 
 .schedule-btn, .directions-btn{
@@ -297,7 +297,7 @@ nav li:last-child a { border-bottom: none; }
 	text-align: center;
 	text-transform: uppercase;
   padding-top: 2px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .schedule-btn{
@@ -352,9 +352,10 @@ nav li:last-child a { border-bottom: none; }
 }
 
 .dancer-section-mobile {
-  display: none;
+  /*display: none;*/
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: -10px;
 }
 
 .orange-dancer-desktop{
@@ -364,17 +365,18 @@ nav li:last-child a { border-bottom: none; }
 	padding-top: 50px;
 	margin-bottom: 0px;
 	padding-bottom: 0px;
+  height: 100%;
 }
 
 .orange-dancer-mobile {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  height: 200px;
+  height: 250px;
+  margin-top: 20px;
 }
 
 .about-section{
-	min-height: 350px;
 	padding: 80px 250px 80px 30px;
 }
 
@@ -387,8 +389,12 @@ nav li:last-child a { border-bottom: none; }
 	background-color: #F76D1E;
 	min-height: 100px;
 	text-align: center;
-	padding: 26px;
+	padding: 34px;
 	letter-spacing: 1px;
+}
+
+.quote-section h3 {
+  margin-bottom: 0px;
 }
 
 .bottom-image{
@@ -402,14 +408,14 @@ nav li:last-child a { border-bottom: none; }
 .footer-section{
 	background-color: #222;
 	height: 50px;
-	padding-top: 15px;
-  margin-bottom: 0px;
 }
 
 .footer-text{
 	color: white;
 	text-align: center;
 	font-weight: 300;
+  line-height: 15px;
+  padding-top: 15px;
 }
 
 .dropdown {
@@ -417,29 +423,75 @@ nav li:last-child a { border-bottom: none; }
 }
 
 @media only screen
-  and (max-width: 400px) {
+  and (max-width: 1230px) {
+    .demo-1 .sl-slide h2 {
+      font-size: 1000%;
+    }
+}
+
+@media only screen
+  and (max-width: 1060px) {
+    .demo-1 .sl-slide h2 {
+      font-size: 800%;
+    }
+}
+
+@media only screen
+  and (max-width: 991px) {
+    .about-section {
+      padding: 40px 60px 40px 60px;
+    }
+    .directions-txt {
+      font-size: 45px;
+      line-height: 48px;
+      padding-top: 35px;
+    }
+}
+
+@media only screen
+  and (max-width: 900px) {
+    .demo-1 .sl-slide h2 {
+      font-size: 600%;
+    }
+}
+
+
+@media only screen
+  and (max-width: 786px) {
     .register-btn{
-      margin: 0 auto 10px auto;
+      margin: 0 auto 15px auto;
     }
     .countdown {
       min-width: 260px;
-      -webkit-transform: translateX(-50%);
-      transform: translateX(-50%);
+      text-align: center;
+      position: static;
+      margin: 10px auto;
     }
     .directions-txt {
       font-size: 40px;
       margin-left: 10px;
       margin-right: 10px;
     }
-    /*.about-section {
-      padding: 10px 60px 10px 0px;
-    }*/
-    .orange-dancer {
-
-    }
-    .dancer-section-desktop {
+    /*.dancer-section-desktop {
       display: none;
     }
     .dancer-section-mobile {
       display: block;
-  }
+    }*/
+    .nav-arrows {
+      display: none;
+    }
+    .demo-1 .sl-slide h2 {
+      line-height: 22px;
+      font-size: 40px;
+      margin-bottom: 40px;
+      letter-spacing: 8px;
+    }
+}
+
+@media only screen
+  and (max-width: 508px) {
+    .footer-text{
+      padding-top: 10px;
+    }
+}
