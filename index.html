@@ -43,6 +43,7 @@
           <div class="container-fluid">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -52,22 +53,34 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><img class="sign-in-icon" src="images/sign-in-icon.png" />Sign-in</a></li>
+                <!-- <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                      <img class="location-btn" src="images/location-btn.png" /><span style="color: #F76D1E">Raleigh</span>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                      <li>City 1</li>
+                      <li>City 2</li>
+                      <li>City 3</li>
+                    </ul>
+                </li> -->
                 <li><a href="#"><img class="location-btn" src="images/location-btn.png" /><span style="color: #F76D1E">Raleigh</span></a></li>
+                <li><a href="#"><img class="sign-in-icon" src="images/sign-in-icon.png" />Sign-in</a></li>
+
+
+
                 <li class="hamburger">
                   <input type="checkbox" id="menuToggle">
                   <label for="menuToggle" class="menu-icon">&#9776;</label>
                   <nav class="menu">
                   	<ul>
                       	<li><a href="#">Home</a></li>
-                          <li><a href="#">Event</a></li>
+                          <li><a href="#schedule">Event</a></li>
                           <li><a href="#">Contact</a></li>
                           <li><a href="#">Performers</a></li>
                           <li><a href="#">Partners</a></li>
                           <li><a href="#">Sponsor</a></li>
                           <li><a href="#">Vendors</a></li>
                           <li><a href="#">Volunteer</a></li>
-                          <li><a href="#">About Us</a></li>
+                          <li><a href="#about">About Us</a></li>
                       </ul>
                   </nav>
                 </ul>
@@ -126,15 +139,15 @@
               <div class="container-fluid green-bar">
 
                 <div class="row">
-                  <div class="col-xs-12 col-xs-12 col-md-6 col-lg-6">
+                  <div class="col-xs-12 col-sm-6 countdown-container">
                     <!-- <div id="defaultCountdown"></div> -->
                     <div class="countdown styled"></div>
                     <!-- <div class="countdown"></div> -->
                   </div>
                   <div class="col-xs-12 col-xs-12 col-md-6 col-lg-6">
-                    <div class="register-btn">
+                    <a href="#"><div class="register-btn">
                       <h2 class="register">Register</h2>
-                    </div>
+                    </div></a>
                   </div>
                 </div>
 
@@ -167,42 +180,45 @@
         <div class="container-fluid after-scroll">
 
 <!--Schedule-->
-          <div class="row">
+          <div id="schedule" class="row">
             <div class="col-xs-12 col-md-6 schedule-left"></div>
             <div class="col-xs-12 col-md-6 schedule-right">
               <div class="schedule-txt">
                 March<br>
                 19-20
               </div>
-              <div class="schedule-btn">
-                <a href="#">View Schedule</a>
-              </div>
+              <a href="#"><div class="schedule-btn">
+                View Schedule
+              </div></a>
             </div>
           </div>
 
 <!--Directions-->
-          <div class="row">
+          <div id="directions" class="row">
             <div class="col-xs-12 col-md-6 directions-left">
               <div class="directions-txt">
                 Exposition Center<br>
                 State Fairgrounds<br>
                 Raleigh, NC
               </div>
-              <div class="directions-btn">
-                <a href="#">View Directions</a>
-              </div>
+              <a href="#"><div class="directions-btn">
+                View Directions
+              </div></a>
             </div>
             <div class="col-xs-12 col-md-6 directions-right"></div>
           </div>
 
 <!--Dancer & about section-->
-          <div class="row">
-            <div class="col-xs-12 col-md-4 dancer-section">
+          <div id="about" class="row">
+            <div class="col-md-4 dancer-section-desktop">
               <img class="orange-dancer" src="images/orange-dancer.png" />
             </div>
-            <div class="col-xs-12 col-md-8 about-section">
+            <div class="col-sm-8 col-md-8 about-section">
               <h3><span style="color: #F76D1E">Interesting sentence about Nuv Yug here.</span></h3>
               <p class="about-txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristiqumsan. Pellentesque elit tortor, adipiscing vel velit in, ultricies fermentum nulla. Donec in urna sem. Nulla facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur.</p>
+            </div>
+            <div class="col-xs-12 dancer-section-mobile">
+              <img class="orange-dancer" src="images/orange-dancer.png" />
             </div>
           </div>
 
@@ -241,7 +257,7 @@
         <!-- For more detail see the <a href="http://keith-wood.name/countdownRef.html">documentation reference</a> page. -->
 
 		<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
 
 
@@ -254,6 +270,7 @@
     <!-- <script type="text/javascript" src="js/countdown.js"></script> -->
     <script type="text/javascript" src="js/jquery.countdown.js"></script>
     <script src="js/to-top.js"></script> <!--back to top jquery-->
+    <script src="js/script.js"></script>
 
     <script>
       $(function() {
@@ -316,7 +333,8 @@
       });
     </script>
 
+
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
   </body>
 </html>

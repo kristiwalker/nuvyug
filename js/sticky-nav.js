@@ -18,4 +18,3 @@ $(document).ready(function(){
    //Note: If you want the content should be shown always once you scroll and do not want to hide it again when go to top agian, no need to write the else part
  });
 });
-</script>
