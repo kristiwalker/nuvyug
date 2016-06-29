@@ -13,10 +13,12 @@ html,body {
 
 a:link {
   text-decoration: none;
+  color: white;
 }
 
 a:hover {
   text-decoration: none;
+  color: white;
 }
 
 p, h1, h2, h3, h4, h5, h6{
@@ -72,14 +74,14 @@ h3{
 	font-family: "kanit";
 	font-size: 20px;
 	font-weight: 500;
-	color: #fff;
+	color: white;
 }
 
 .navbar-default .navbar-nav>li>a:hover{
 	font-family: "kanit";
 	font-size: 20px;
 	font-weight: 500;
-	color: #888;
+	color: white;
 }
 
 .location-btn, .sign-in-icon{
@@ -165,7 +167,7 @@ nav li:last-child a { border-bottom: none; }
 	padding: 10px 0;
 	position: relative;
 	background: #222;
-  opacity: .99;
+  opacity: .95;
 	right: -240px;
 	font-family: "kanit";
 	font-weight: 400;
@@ -182,17 +184,25 @@ nav li:last-child a { border-bottom: none; }
 }
 
 .menu-icon {
-	padding: 5px 20px;
+	padding: 11px 20px;
 	color: #fff;
 	cursor: pointer;
 	float: right;
-	margin: 9px 6px 0px 0;
-	border-radius: 5px;
 	font-size: 20px;
 }
-#menuToggle { display: none; }
 
-#menuToggle:checked ~ .menu { position: relative; right: 0; }
+.menu-icon:hover {
+  background-color: #F76D1E;
+}
+
+#menuToggle {
+  display: none;
+  margin: 9px 6px 4px 0;
+}
+
+#menuToggle:checked ~ .menu {
+  position: relative; right: 0;
+}
 
 .green-bar{
 	min-height: 90px;

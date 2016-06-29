@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="css/to-top-reset.css"> <!-- CSS reset -->
         <link rel="stylesheet" href="css/to-top.css" />
         <link rel="stylesheet" type="text/css" href="css/countdown.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/dropdown.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
 
 
@@ -62,8 +63,17 @@
                       <li>City 3</li>
                     </ul>
                 </li> -->
-                <li><a href="#"><img class="location-btn" src="images/location-btn.png" /><span style="color: #F76D1E">Raleigh</span></a></li>
-                <li><a href="#"><img class="sign-in-icon" src="images/sign-in-icon.png" />Sign-in</a></li>
+                <li class="dropdown">
+                  <a class="dropbtn">
+                    <img class="location-btn" src="images/location-btn.png" />
+                    <span style="color: ">Raleigh</span>
+                  </a>
+                  <div class="dropdown-content">
+                    <a href="#">Charlotte</a>
+                  </div>
+                </li>
+                <!-- <li><a href="#"><img class="location-btn" src="images/location-btn.png" /><span style="color: #F76D1E">Raleigh</span></a></li> -->
+                <li class="dropdown"><a href="#" class="dropbtn"><img class="sign-in-icon" src="images/sign-in-icon.png" />Sign-in</a></li>
 
 
 
