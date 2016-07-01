@@ -20,6 +20,7 @@
         <link rel="stylesheet" type="text/css" href="css/sign-in.css" />
         <link rel="stylesheet" href="css/sign-in-reset.css"> <!-- CSS reset -->
         <link rel="stylesheet" type="text/css" href="css/countdown.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/table.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
 
 
@@ -35,6 +36,86 @@
     			<link rel="stylesheet" type="text/css" href="css/styleNoJS.css" />
     		</noscript> -->
 
+    <!--[if !IE]><!-->
+  	<style>
+
+  	/*
+  	Max width before this PARTICULAR table gets nasty
+  	This query will take effect for any screen smaller than 760px
+  	and also iPads specifically.
+  	*/
+  	@media
+  	only screen and (max-width: 760px),
+  	(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+  		/* Force table to not be like tables anymore */
+  		table, thead, tbody, th, td, tr {
+  			display: block;
+  		}
+
+  		/* Hide table headers (but not display: none;, for accessibility) */
+  		thead tr {
+  			position: absolute;
+  			top: -9999px;
+  			left: -9999px;
+  		}
+
+  		tr { border: 1px solid #ccc; }
+
+  		td {
+  			/* Behave  like a "row" */
+  			border: none;
+  			border-bottom: 1px solid #eee;
+  			position: relative;
+  			padding-left: 50%;
+  		}
+
+  		td:before {
+  			/* Now like a table header */
+  			position: absolute;
+  			/* Top/left values mimic padding */
+  			top: 6px;
+  			left: 6px;
+  			width: 45%;
+  			padding-right: 10px;
+  			white-space: nowrap;
+  		}
+
+  		/*
+  		Label the data
+  		*/
+  		td:nth-of-type(1):before { content: "First Name"; }
+  		td:nth-of-type(2):before { content: "Last Name"; }
+  		td:nth-of-type(3):before { content: "Job Title"; }
+  		td:nth-of-type(4):before { content: "Favorite Color"; }
+  		td:nth-of-type(5):before { content: "Wars of Trek?"; }
+  		td:nth-of-type(6):before { content: "Porn Name"; }
+  		td:nth-of-type(7):before { content: "Date of Birth"; }
+  		td:nth-of-type(8):before { content: "Dream Vacation City"; }
+  		td:nth-of-type(9):before { content: "GPA"; }
+  		td:nth-of-type(10):before { content: "Arbitrary Data"; }
+  	}
+
+  	/* Smartphones (portrait and landscape) ----------- */
+  	@media only screen
+  	and (min-device-width : 320px)
+  	and (max-device-width : 480px) {
+  		body {
+  			padding: 0;
+  			margin: 0;
+  			width: 320px; }
+  		}
+
+  	/* iPads (portrait and landscape) ----------- */
+  	@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  		body {
+  			width: 495px;
+  		}
+  	}
+
+  	</style>
+  	<!--<![endif]-->
+
 
     </head>
 
@@ -42,7 +123,7 @@
     <body>
 
       <!-- Nav -->
-      <nav id="nav-change" class="main-nav navbar navbar-default navbar-fixed-top">
+      <nav class="main-nav navbar navbar-pages navbar-fixed-top">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -52,7 +133,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><img src="images/SmLogoWhite_NuvYugIndiaFest_053116_v1.png"</a>
+            <a class="navbar-brand-pages" href="index.html"><img src="images/SmLogoWhite_NuvYugIndiaFest_053116_v1.png"></a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -183,154 +264,156 @@
         </div> <!-- cd-user-modal-container -->
       </div> <!-- cd-user-modal -->
 
-      <a href="#"><div class="logo"></div></a>
+      <!-- <a href="#"><div class="logo"></div></a> -->
 
-<!-- Slider -->
-      <div id="start-change" class="container demo-1">
+      <div id="page-wrap">
+      <br><br>
+      <h2 style="color: #138808">Responsive Table</h2>
+      <br><br>
+      <!-- <p>Go to <a href="index.html">Non-Responsive Table</a></p> -->
 
-          <div id="slider" class="sl-slider-wrapper">
+      <table>
+        <thead>
+        <tr>
+          <th>Sr.</th>
+          <th>Item ID</th>
+          <th>Timeslot</th>
+          <th>Team name</th>
+          <th>Title</th>
+          <th>Duration</th>
+          <th>Created by</th>
+          <th>Age group (#)</th>
+          <th>Status</th>
+          <th>Soundtrack</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>James</td>
+          <td>Matman</td>
+          <td>Chief Sandwich Eater</td>
+          <td>Lettuce Green</td>
+          <td>Trek</td>
+          <td>Digby Green</td>
+          <td>January 13, 1979</td>
+          <td>Gotham City</td>
+          <td>3.1</td>
+          <td>RBX-12</td>
+        </tr>
+        <tr>
+          <td>The</td>
+          <td>Tick</td>
+          <td>Crimefighter Sorta</td>
+          <td>Blue</td>
+          <td>Wars</td>
+          <td>John Smith</td>
+          <td>July 19, 1968</td>
+          <td>Athens</td>
+          <td>N/A</td>
+          <td>Edlund, Ben (July 1996).</td>
+        </tr>
+        <tr>
+          <td>Jokey</td>
+          <td>Smurf</td>
+          <td>Giving Exploding Presents</td>
+          <td>Smurflow</td>
+          <td>Smurf</td>
+          <td>Smurflane Smurfmutt</td>
+          <td>Smurfuary Smurfteenth, 1945</td>
+          <td>New Smurf City</td>
+          <td>4.Smurf</td>
+          <td>One</td>
+        </tr>
+        <tr>
+          <td>Cindy</td>
+          <td>Beyler</td>
+          <td>Sales Representative</td>
+          <td>Red</td>
+          <td>Wars</td>
+          <td>Lori Quivey</td>
+          <td>July 5, 1956</td>
+          <td>Paris</td>
+          <td>3.4</td>
+          <td>3451</td>
+        </tr>
+        <tr>
+          <td>Captain</td>
+          <td>Cool</td>
+          <td>Tree Crusher</td>
+          <td>Blue</td>
+          <td>Wars</td>
+          <td>Steve 42nd</td>
+          <td>December 13, 1982</td>
+          <td>Las Vegas</td>
+          <td>1.9</td>
+          <td>Under the couch</td>
+        </tr>
+        <tr>
+          <td>Captain</td>
+          <td>Cool</td>
+          <td>Tree Crusher</td>
+          <td>Blue</td>
+          <td>Wars</td>
+          <td>Steve 42nd</td>
+          <td>December 13, 1982</td>
+          <td>Las Vegas</td>
+          <td>1.9</td>
+          <td>Under the couch</td>
+        </tr>
+        <tr>
+          <td>Captain</td>
+          <td>Cool</td>
+          <td>Tree Crusher</td>
+          <td>Blue</td>
+          <td>Wars</td>
+          <td>Steve 42nd</td>
+          <td>December 13, 1982</td>
+          <td>Las Vegas</td>
+          <td>1.9</td>
+          <td>Under the couch</td>
+        </tr>
+        <tr>
+          <td>Captain</td>
+          <td>Cool</td>
+          <td>Tree Crusher</td>
+          <td>Blue</td>
+          <td>Wars</td>
+          <td>Steve 42nd</td>
+          <td>December 13, 1982</td>
+          <td>Las Vegas</td>
+          <td>1.9</td>
+          <td>Under the couch</td>
+        </tr>
+        <tr>
+          <td>Captain</td>
+          <td>Cool</td>
+          <td>Tree Crusher</td>
+          <td>Blue</td>
+          <td>Wars</td>
+          <td>Steve 42nd</td>
+          <td>December 13, 1982</td>
+          <td>Las Vegas</td>
+          <td>1.9</td>
+          <td>Under the couch</td>
+        </tr>
+        <tr>
+          <td>Captain</td>
+          <td>Cool</td>
+          <td>Tree Crusher</td>
+          <td>Blue</td>
+          <td>Wars</td>
+          <td>Steve 42nd</td>
+          <td>December 13, 1982</td>
+          <td>Las Vegas</td>
+          <td>1.9</td>
+          <td>Under the couch</td>
+        </tr>
 
-    				<div class="sl-slider">
+        </tbody>
+      </table>
 
-    					<div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-    						<div class="sl-slide-inner">
-    							<div class="border">
-                    <h2>DANCE</h2>
-                  </div>
-                </div>
-    					</div>
+      </div>
 
-    					<div class="sl-slide bg-2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
-    						<div class="sl-slide-inner">
-    							<h2>MUSIC</h2>
-    						</div>
-    					</div>
-
-    					<div class="sl-slide bg-3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
-    						<div class="sl-slide-inner">
-    							  <h2>FASHION</h2>
-    						</div>
-    					</div>
-
-    					<div class="sl-slide bg-4" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
-    						<div class="sl-slide-inner">
-    							<h2>CRAFTS</h2>
-    						</div>
-    					</div>
-
-    					<div class="sl-slide bg-5" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
-    						<div class="sl-slide-inner">
-    							<h2>CUISINE</h2>
-    						</div>
-    					</div>
-
-              <div class="sl-slide bg-6" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
-                <div class="sl-slide-inner">
-                  <h2>EXHIBITION</h2>
-                </div>
-              </div>
-<!--Green bar-->
-              <div class="container-fluid green-bar">
-
-                <div class="row">
-                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 countdown-container">
-                    <!-- <div id="defaultCountdown"></div> -->
-                    <div class="countdown styled"></div>
-                    <!-- <div class="countdown"></div> -->
-                  </div>
-                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <a href="#"><div class="register-btn">
-                      <h2 class="register">Register</h2>
-                    </div></a>
-                  </div>
-                </div>
-
-              </div><!-- /Green bar-->
-
-
-    				</div><!-- /sl-slider -->
-
-    				<nav id="nav-arrows" class="nav-arrows">
-    					<span class="nav-arrow-prev">Previous</span>
-    					<span class="nav-arrow-next">Next</span>
-    				</nav>
-
-            </div>
-
-    				<!-- <nav id="nav-dots" class="nav-dots">
-    					<span class="nav-dot-current"></span>
-    					<span></span>
-    					<span></span>
-    					<span></span>
-    					<span></span>
-    				</nav> -->
-
-    			</div><!-- /slider-wrapper -->
-
-        </div><!-- / container demo1 -->
-
-
-<!--Content after scroll-->
-        <div class="container-fluid after-scroll">
-
-<!--Schedule-->
-          <div id="schedule" class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 schedule-left"></div>
-            <div class="col-xs-12 col-sm-6 col-md-6 schedule-right">
-              <div class="schedule-txt">
-                March<br>
-                19-20
-              </div>
-              <a href="#"><div class="schedule-btn">
-                View Schedule
-              </div></a>
-            </div>
-          </div>
-
-<!--Directions-->
-          <div id="directions" class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 directions-left">
-              <div class="directions-txt">
-                Exposition Center<br>
-                State Fairgrounds<br>
-                Raleigh, NC
-              </div>
-              <a href="#"><div class="directions-btn">
-                View Directions
-              </div></a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 directions-right"></div>
-          </div>
-
-<!--Dancer & about section-->
-          <div id="about" class="row">
-            <div class="hidden-xs hidden-sm col-md-4 dancer-section-desktop">
-              <img class="orange-dancer-desktop" src="images/orange-dancer.png" />
-            </div>
-            <div class="col-sm-12 col-md-8 about-section">
-              <h3><span style="color: #F76D1E">Interesting sentence about Nuv Yug here.</span></h3>
-              <p class="about-txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristiqumsan. Pellentesque elit tortor, adipiscing vel velit in, ultricies fermentum nulla. Donec in urna sem. Nulla facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-            <!-- <div class="hidden-xm hidden-sm hidden-md hidden-lg dancer-section-mobile">
-              <img class="orange-dancer-mobile" src="images/orange-dancer.png" />
-            </div> -->
-          </div>
-
-<!--Quote-->
-          <div class="row">
-            <div class="col-xs-12 quote-section">
-              <h3>
-                <span style="font-size: 35px; font-weight: 400; color: white">
-                  “QUOTE ABOUT NUV YUG EXPERIENCE FROM PARTICIPANT.”
-                </span>
-              </h3>
-            </div>
-          </div>
-
-<!--Bottom img-->
-          <div class="row">
-            <div class="col-xs-12 bottom-image"></div>
-          </div>
 
 <!--Footer-->
           <div class="row">
@@ -339,13 +422,10 @@
             </div>
           </div>
 
-        </div> <!--/ Content after scroll-->
-
-
         <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
 
 
-        <a href="#0" class="cd-top">Top</a>
+        <!-- <a href="#0" class="cd-top">Top</a> -->
 
 
         <!-- For more detail see the <a href="http://keith-wood.name/countdownRef.html">documentation reference</a> page. -->
@@ -366,67 +446,6 @@
     <script type="text/javascript" src="js/jquery.countdown.js"></script>
     <script src="js/to-top.js"></script> <!--back to top jquery-->
     <script src="js/script.js"></script>
-
-    <script>
-      $(function() {
-        var endDate = "June 7, 2087 15:03:25";
-
-        $('.countdown.simple').countdown({ date: endDate });
-
-        $('.countdown.styled').countdown({
-          date: endDate,
-          render: function(data) {
-            $(this.el).html("<div>" + this.leadingZeros(data.days, 3) + " <span>days</span></div><div>" + this.leadingZeros(data.hours, 2) + " <span>hrs</span></div><div>" + this.leadingZeros(data.min, 2) + " <span>min</span></div><div>" + this.leadingZeros(data.sec, 2) + " <span>sec</span></div>");
-          }
-        });
-
-        $('.countdown.callback').countdown({
-          date: +(new Date) + 10000,
-          render: function(data) {
-            $(this.el).text(this.leadingZeros(data.sec, 2) + " sec");
-          },
-          onEnd: function() {
-            $(this.el).addClass('ended');
-          }
-        }).on("click", function() {
-          $(this).removeClass('ended').data('countdown').update(+(new Date) + 10000).start();
-        });
-
-        // End time for diff purposes
-        var endTimeDiff = new Date().getTime() + 15000;
-        // This is server's time
-        var timeThere = new Date();
-        // This is client's time (delayed)
-        var timeHere = new Date(timeThere.getTime() - 5434);
-        // Get the difference between client time and server time
-        var diff_ms = timeHere.getTime() - timeThere.getTime();
-        // Get the rounded difference in seconds
-        var diff_s = diff_ms / 1000 | 0;
-
-        var notice = [];
-        notice.push('Server time: ' + timeThere.toDateString() + ' ' + timeThere.toTimeString());
-        notice.push('Your time: ' + timeHere.toDateString() + ' ' + timeHere.toTimeString());
-        notice.push('Time difference: ' + diff_s + ' seconds (' + diff_ms + ' milliseconds to be precise). Your time is a bit behind.');
-
-        $('.offset-notice').html(notice.join('<br />'));
-
-        $('.offset-server .countdown').countdown({
-          date: endTimeDiff,
-          offset: diff_s * 1000,
-          onEnd: function() {
-            $(this.el).addClass('ended');
-          }
-        });
-
-        $('.offset-client .countdown').countdown({
-          date: endTimeDiff,
-          onEnd: function() {
-            $(this.el).addClass('ended');
-          }
-        });
-
-      });
-    </script>
 
 
     <!-- Latest compiled and minified JavaScript -->

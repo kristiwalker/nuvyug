@@ -1,0 +1,44 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font: 14px/1.4 "Kanit", Serif;
+}
+#page-wrap {
+	margin: 50px;
+}
+p {
+	margin: 20px 0;
+}
+
+	/*
+	Generic Styling, for Desktops/Laptops
+	*/
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	thead {
+		color: #FFF;
+	}
+
+	tbody {
+		color: #222;
+	}
+
+	/* Zebra striping */
+	tr:nth-of-type(odd) {
+		background: #eee;
+	}
+	th {
+		background: #138808;
+		color: white;
+		font-weight: bold;
+	}
+	td, th {
+		padding: 6px;
+		/*border: 1px solid #ccc;*/
+		text-align: left;
+	}

@@ -18,7 +18,12 @@ a:link {
 
 a:hover {
   text-decoration: none;
-  color: white;
+  color: #F76D1E;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #138808;
 }
 
 p, h1, h2, h3, h4, h5, h6{
@@ -36,6 +41,7 @@ h2{
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 50px;
+  line-height: 44px;
 }
 
 h3{
@@ -77,18 +83,17 @@ h3{
   transition-duration: 1s;
 }
 
+.navbar-pages {
+	background-color: #222;
+	border-color: transparent;
+  transition-duration: 1s;
+}
+
 .navbar-fixed-top{
     max-height: 55px;
 }
 
-.navbar-default .navbar-nav>li>a{
-	font-family: "kanit";
-	font-size: 20px;
-	font-weight: 500;
-	color: white;
-}
-
-.navbar-default .navbar-nav>li>a:hover{
+.navbar-default .navbar-nav>li>a, .navbar-pages .navbar-nav>li>a {
 	font-family: "kanit";
 	font-size: 20px;
 	font-weight: 500;
@@ -101,11 +106,21 @@ h3{
   padding-bottom: 12px;
 }
 
+.navbar-brand-pages {
+  display: inline-block;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
 .location-btn, .sign-in-icon{
 	width: 20px;
 	height: 20px;
 	margin-right: 10px;
 	margin-top: -2px;
+}
+
+a.dropbtn {
+  padding-bottom: 20px;
 }
 
 .sign-in{
@@ -135,7 +150,7 @@ h3{
 
 a{
 	text-decoration: none;
-	color: #00A5CC;
+	color: #138808;
 }
 
 li{
@@ -152,6 +167,13 @@ li{
    margin: 0 0 0 6px;
 }
 nav { width: 100%; text-align: center; }
+
+.navbar-default .navbar-nav>li>a:hover {
+  color: white;
+  background: #F76D1E;
+  cursor: pointer;
+}
+
 nav a {
 	display: block;
 	padding: 15px 20px;
@@ -163,10 +185,26 @@ nav a:hover {
 	 text-decoration: none;
 }
 
-nav a:focus {
-    color: #fff;
+nav a:visited {
+	 background: #F76D1E;
+	 color: #FFF;
+	 text-decoration: none;
 }
 
+nav a:active {
+	 background: #F76D1E;
+	 color: #FFF;
+	 text-decoration: none;
+}
+
+nav a:focus {
+    color: #fff;
+    background: #F76D1E;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+  background: #F76D1E;
+}
 
 nav li:last-child a { border-bottom: none; }
 
@@ -444,10 +482,6 @@ nav li:last-child a { border-bottom: none; }
 	font-weight: 300;
   line-height: 15px;
   padding-top: 15px;
-}
-
-.dropdown {
-  position: relative;
 }
 
 @media only screen
