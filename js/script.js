@@ -42,4 +42,22 @@ $(document).ready(function(){
       }
     });
 
+    $(function() {
+        $("a.cd-signin")
+            .mouseover(function() {
+                var src = $(".sign-in-icon").attr("src").match(/[^\.]+/) + "-hover.png";
+                $(".sign-in-icon").attr("src", src);
+            })
+            .mouseout(function() {
+                var src = $(".sign-in-icon").attr("src").replace("-hover.png", ".png");
+                $(".sign-in-icon").attr("src", src);
+            });
+    });
+
+    // $("a.cd-signin.dropbtn.hidden-xs").hover(function() {
+    //     $(this).attr("src",".sign-in-icon.png");
+    //     }, function() {
+    //     $(this).attr("src","button.png");
+    // });
+
 });

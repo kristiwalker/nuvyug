@@ -23,8 +23,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" />
 
 
-
-        <link rel="shortcut icon" href="../favicon.ico">
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 
     		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
         <script src="js/modernizr.js"></script> <!-- Modernizr -->
@@ -52,11 +51,48 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><img src="images/SmLogoWhite_NuvYugIndiaFest_053116_v1.png"</a>
+            <a class="navbar-brand" href="index.html"><img src="images/SmLogoWhite_NuvYugIndiaFest_053116_v1.png"></a>
           </div>
-          <div id="navbar" class="navbar-collapse collapse">
+          <div id="navbar" class="navbar-collapse collapse hidden-sm hidden-md hidden-lg" aria-expanded="true">
+            <ul class="nav navbar-nav hidden-sm hidden-md hidden-lg">
+
+                <li class="nav-mobile-item dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Raleigh <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Charlotte</a></li>
+                    </ul>
+                </li>
+                <li class="nav-mobile-item hidden-sm hidden-md hidden-lg">
+                    <a href="#" class="cd-signin">Sign in</a>
+                </li>
+                <li class="nav-mobile-item hidden-sm hidden-md hidden-lg">
+                    <a href="#">Event</a>
+                </li>
+                <li class="nav-mobile-item hidden-sm hidden-md hidden-lg">
+                    <a href="#">Contact</a>
+                </li>
+                <li class="nav-mobile-item hidden-sm hidden-md hidden-lg">
+                    <a href="#">Performers</a>
+                </li>
+                <li class="nav-mobile-item hidden-sm hidden-md hidden-lg">
+                    <a href="#">Partners</a>
+                </li>
+                <li class="nav-mobile-item hidden-sm hidden-md hidden-lg">
+                    <a href="#">Sponsor</a>
+                </li>
+                <li class="nav-mobile-item hidden-sm hidden-md hidden-lg">
+                    <a href="#">Vendors</a>
+                </li>
+                <li class="nav-mobile-item hidden-sm hidden-md hidden-lg">
+                    <a href="#">Volunteer</a>
+                </li>
+                <li class="nav-mobile-item hidden-sm hidden-md hidden-lg">
+                    <a href="#">About us</a>
+                </li>
+            </ul>
+
             <ul class="nav navbar-nav navbar-right">
-              <li class="dropdown">
+              <li class="dropdown hidden-xs">
                 <a class="dropbtn">
                   <img class="location-btn" src="images/location-btn.png" />
                   <span style="color: ">Raleigh</span>
@@ -66,11 +102,11 @@
                 </div>
               </li>
               <!-- <li><a href="#"><img class="location-btn" src="images/location-btn.png" /><span style="color: #F76D1E">Raleigh</span></a></li> -->
-              <li><a href="#" class="cd-signin dropbtn"><img class="sign-in-icon" src="images/sign-in-icon.png" />Sign in</a></li>
+              <li class="signin-hover"><a href="#" class="cd-signin dropbtn hidden-xs"><img class="sign-in-icon" src="images/sign-in-icon.png" />Sign in</a></li>
 
 
 
-              <li class="hamburger">
+              <li class="hamburger hidden-xs">
                 <input type="checkbox" id="menuToggle">
                 <label for="menuToggle" class="menu-icon">&#9776;</label>
                 <nav class="menu">
@@ -83,7 +119,7 @@
                         <li><a href="#">Sponsor</a></li>
                         <li><a href="#">Vendors</a></li>
                         <li><a href="#">Volunteer</a></li>
-                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#about">About us</a></li>
                     </ul>
                 </nav>
               </ul>
@@ -183,7 +219,7 @@
         </div> <!-- cd-user-modal-container -->
       </div> <!-- cd-user-modal -->
 
-      <a href="#"><div class="logo"></div></a>
+      <a href="#"><div class="logo hidden-xs"></div></a>
 
 <!-- Slider -->
       <div id="start-change" class="container demo-1">
@@ -232,14 +268,14 @@
 <!--Green bar-->
               <div class="container-fluid green-bar">
 
-                <div class="row">
+                <div class="row main-nav">
                   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 countdown-container">
                     <!-- <div id="defaultCountdown"></div> -->
                     <div class="countdown styled"></div>
                     <!-- <div class="countdown"></div> -->
                   </div>
                   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <a href="#"><div class="register-btn">
+                    <a href="#"><div class="cd-signup register-btn">
                       <h2 class="register">Register</h2>
                     </div></a>
                   </div>
@@ -349,10 +385,12 @@
 
 
         <!-- For more detail see the <a href="http://keith-wood.name/countdownRef.html">documentation reference</a> page. -->
-
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 		<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script> -->
     <script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -426,6 +464,9 @@
         });
 
       });
+
+      $.support.transition = false;
+
     </script>
 
 

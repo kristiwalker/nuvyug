@@ -198,7 +198,7 @@
 	opacity: .5;
 	padding: 20px;
 	position: absolute;
-	font-size: 200px;
+	font-size: 150px;
 	letter-spacing: 13px;
 	text-transform: uppercase;
 	width: 80%;
@@ -207,6 +207,7 @@
 	line-height: 140px;
 	bottom: 50%;
 	margin: 0 0 -60px 0;
+	text-shadow: 4px 4px #333;
 }
 
 .demo-1 .sl-slide blockquote {
@@ -313,7 +314,7 @@
 .demo-1 .bg-4 .sl-slide-inner,
 .demo-1 .bg-4 .sl-content-slice {
 	background: #222;
-	background-image: url("images/slider-4.jpg");
+	background-image: url("images/slider-1.jpg");
 }
 
 .demo-1 .bg-4 .deco {
@@ -331,15 +332,11 @@
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
 
-.demo-1 .bg-4 blockquote:before {
-	color: #379eaa;
-}
-
 /* Fifth Slide */
 .demo-1 .bg-5 .sl-slide-inner,
 .demo-1 .bg-5 .sl-content-slice {
 	background: #222;
-	background-image: url("images/slider-5.jpg");
+	background-image: url("images/slider-2.jpg");
 }
 
 .demo-1 .bg-5 .deco {
@@ -347,14 +344,14 @@
 }
 
 .demo-1 .bg-5 .deco:after {
-	color: #000;
+	color: #fff;
 	text-shadow: 0 0 1px #000;
 }
 
 .demo-1 .bg-5 h2,
 .demo-1 .bg-5 blockquote{
-	color: #000;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+	color: #fff;
+	text-shadow: 4px 4px #555;
 }
 
 .demo-1 .bg-5 blockquote:before {
@@ -365,7 +362,7 @@
 .demo-1 .bg-6 .sl-slide-inner,
 .demo-1 .bg-6 .sl-content-slice {
 	background: #222;
-	background-image: url("images/slider-6.jpg");
+	background-image: url("images/slider-3.jpg");
 }
 
 .demo-1 .bg-6 .deco {
@@ -373,14 +370,14 @@
 }
 
 .demo-1 .bg-6 .deco:after {
-	color: #000;
+	color: #fff;
 	text-shadow: 0 0 1px #000;
 }
 
 .demo-1 .bg-6 h2,
 .demo-1 .bg-6 blockquote{
-	color: #000;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+	color: #fff;
+	text-shadow: 4px 4px #555;
 }
 
 .demo-1 .bg-6 blockquote:before {
@@ -619,3 +616,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }*/
+
+.sl-slider {
+	background: #222;
+}
+
+.demo-1 {
+	background-color: #222;
+}
